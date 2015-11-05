@@ -1,5 +1,5 @@
 /*!
-*  ui-leaflet 1.0.0 2015-11-03
+*  ui-leaflet 1.0.0 2015-11-04
 *  ui-leaflet - An AngularJS directive to easily interact with Leaflet maps
 *  git: https://github.com/angular-ui/ui-leaflet
 */
@@ -2138,7 +2138,8 @@ angular.module('ui-leaflet').factory('leafletMapDefaults', function ($q, leaflet
                 lat: 0,
                 lng: 0,
                 zoom: 1
-            }
+            },
+            trackResize:true
         };
     }
 
@@ -2172,7 +2173,8 @@ angular.module('ui-leaflet').factory('leafletMapDefaults', function ($q, leaflet
                 touchZoom: d.touchZoom,
                 attributionControl: d.attributionControl,
                 worldCopyJump: d.worldCopyJump,
-                crs: d.crs
+                crs: d.crs,
+                trackResize:d.trackResize
             };
 
             if (isDefined(d.minZoom)) {
@@ -2215,6 +2217,7 @@ angular.module('ui-leaflet').factory('leafletMapDefaults', function ($q, leaflet
                 newDefaults.zoomControlPosition = isDefined(userDefaults.zoomControlPosition) ? userDefaults.zoomControlPosition : newDefaults.zoomControlPosition;
                 newDefaults.keyboard = isDefined(userDefaults.keyboard) ? userDefaults.keyboard : newDefaults.keyboard;
                 newDefaults.dragging = isDefined(userDefaults.dragging) ? userDefaults.dragging : newDefaults.dragging;
+                newDefaults.trackResize = isDefined(userDefaults.trackResize) ? userDefaults.trackResize : newDefaults.trackResize;
 
                 if (isDefined(userDefaults.controls)) {
                     angular.extend(newDefaults.controls, userDefaults.controls);
